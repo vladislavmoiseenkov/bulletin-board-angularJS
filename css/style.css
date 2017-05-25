@@ -1,0 +1,49 @@
+.controlBTN {
+    margin-top: 20px;
+}
+
+.login-form input {
+    margin-bottom: 10px;
+}
+
+.ad {
+    background-color: #f5f5f5;
+    color: #333;
+    margin-top: 20px;
+}
+
+.ad a {
+    color: #333;
+}
+
+.newAd input {
+    margin-bottom: 20px;
+}
+
+.declaration {
+    margin-bottom: 20px;
+}
+
+div.list-group {
+    position: relative;
+}
+
+.adControl {
+    color: #ffffff;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+
+.adControl span {
+    color: #ffffff;
+}
+
+.list-group-item-text .row h5 {
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
+.titleAd {
+    position: relative;
+}

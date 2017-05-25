@@ -1,0 +1,29 @@
+<div class="container">
+    <div class="row">
+        <div class="col-lg-offset-4 col-lg-4">
+            <div class="list-group">
+                <div ng-repeat="ad in ($root.$storage.ads | startFrom:(currentPage - 1) * itemsPerPage | limitTo: itemsPerPage) track by $index" class="list-group-item">
+                    <h4 class="list-group-item-heading"><a href="#!/ad/{{ $index }}">{{ ad.title }}</a></h4>
+                    <div class="list-group-item-text">
+                        <p class="">{{ ad.description }}</p>
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <h5 class="text-muted">Автор: {{ ad.author }}</h5>
+                            </div>
+                            <div class="col-lg-6">
+                                <h5 class="text-muted">Дата: {{ ad.time | date :  "dd.MM.y"}}</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="adControl" ng-show="$root.$storage.user.login === ad.author">
+                        <a href="#!/edit/{{ $index }}" class="btn btn-primary"><span class="glyphicon glyphicon-edit"></span></a>
+                        <a href="#!/delete/{{ $index }}" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span></a>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <ul uib-pagination data-ng-show="$root.$storage.ads.length > itemsPerPage" total-items="$root.$storage.ads.length" items-per-page="itemsPerPage" ng-model="currentPage"></ul>
+            </div>
+        </div>
+    </div>
+</div>

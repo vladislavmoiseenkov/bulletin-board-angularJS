@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="bulletinBoard">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <section class="signIn" ng-controller="signInCtrl">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-offset-8 col-lg-4 login-form" data-ng-show="!$root.$storage.user">
+                    <input type="text" data-ng-model="login" class="form-control" placeholder="login" />
+                    <input type="password" data-ng-model="password" class="form-control" placeholder="password" />
+                    <button class="btn btn-success text-uppercase" data-ng-click="signIn()">sign in</button>
+                </div>
+                <div class="col-lg-offset-6 col-lg-6 clearfix" data-ng-show="$root.$storage.user">
+                    <h3 class="pull-left">Hello, {{ $root.$storage.user.login }}</h3>
+                    <div class="control pull-right">
+                        <a href="#!/" class="btn btn-primary controlBTN text-uppercase">
+                            <span class="glyphicon glyphicon-home"></span>
+                        </a>
+                        <a href="#!/edit" class="btn btn-success controlBTN text-uppercase">create new</a>
+                        <a href="#!/logout" class="btn btn-danger controlBTN text-uppercase">exit</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div data-ng-view></div>
+
+    </section>
+
+    <!--<script src="js/angular.min.js"></script>-->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ngStorage/0.3.11/ngStorage.js"></script>
+    <script src="node_modules/angular-ui-bootstrap/dist/ui-bootstrap.js"></script>
+    <script src="node_modules/angular-ui-bootstrap/dist/ui-bootstrap-tpls.js"></script>
+    <script src="https://code.angularjs.org/1.6.4/angular-route.min.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/routes.js"></script>
+    <script src="js/run.js"></script>
+    <script src="js/filters.js"></script>
+    <script src="js/controllers/signInCtrl.js"></script>
+    <script src="js/controllers/mainCtrl.js"></script>
+    <script src="js/controllers/editCtrl.js"></script>
+    <script src="js/controllers/editAdCtrl.js"></script>
+    <script src="js/controllers/adCtrl.js"></script>
+    <script src="js/controllers/deleteCtrl.js"></script>
+</body>
+</html>
